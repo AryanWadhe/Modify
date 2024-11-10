@@ -1,14 +1,21 @@
 import { Server } from "socket.io";
 import { Message } from "../models/message.model.js";
 
+
 export const initializeSocket = (server) => {
+	const allowedOrigins = ["http://localhost:3000", "https://modify-lemon.vercel.app"];
 	const io = new Server(server, {
 		cors: {
-			// origin: "http://localhost:3000",
-			origin: "https://modify-lemon.vercel.app/",
-			credentials: true,
+		  origin: (origin, callback) => {
+			if (allowedOrigins.includes(origin) || !origin) {
+			  callback(null, true);
+			} else {
+			  callback(new Error("Not allowed by CORS"));
+			}
+		  },
+		  credentials: true,
 		},
-	});
+	  });
 
 	const userSockets = new Map(); // { userId: socketId}
 	const userActivities = new Map(); // {userId: activity}

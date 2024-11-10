@@ -27,12 +27,20 @@ const PORT = process.env.PORT;
 const httpServer = createServer(app);
 initializeSocket(httpServer);
 
+const allowedOrigins = ["http://localhost:3000", "https://modify-lemon.vercel.app"];
+
 app.use(
-	cors({
-		// origin: "http://localhost:3000",
-		origin: "https://modify-lemon.vercel.app/",
-		credentials: true,
-	})
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests from allowed origins only
+      if (allowedOrigins.includes(origin) || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
 );
 
 app.use(express.json()); // to parse req.body
