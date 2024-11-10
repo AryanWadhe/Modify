@@ -28,7 +28,8 @@ const httpServer = createServer(app);
 initializeSocket(httpServer);
 
 // const allowedOrigins = ["https://modify-lemon.vercel.app","http://localhost:3000"];
-const allowedOrigins = ["http://localhost:3000"];
+// const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = ["https://modify-lemon.vercel.app"];
 
 app.use(
   cors({
