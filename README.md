@@ -48,5 +48,32 @@ npm install
 # For frontend
 cd ../frontend
 npm install
+```
+
+
+### 3. Configure Environment Variables
+
+In both the `backend` and `frontend` folders, create `.env` files as described below.
+
+
+### 4. Run the Application
+
+Open two terminal windows to run the backend and frontend servers.
+
+
+
+Backend Server
+
+```bash
+cd backend
+npm run start
+
+```
+
+Frontend Server
+
+```bash
+cd frontend
+npm run dev
 
 ```
