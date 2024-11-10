@@ -27,7 +27,7 @@ const PORT = process.env.PORT;
 const httpServer = createServer(app);
 initializeSocket(httpServer);
 
-const allowedOrigins = ["http://localhost:3000", "https://modify-lemon.vercel.app"];
+const allowedOrigins = ["https://modify-lemon.vercel.app","http://localhost:3000"];
 
 app.use(
   cors({
