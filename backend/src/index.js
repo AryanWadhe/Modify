@@ -29,7 +29,8 @@ initializeSocket(httpServer);
 
 app.use(
 	cors({
-		origin: "http://localhost:3000",
+		// origin: "http://localhost:3000",
+		origin: "https://modify-lemon.vercel.app/",
 		credentials: true,
 	})
 );
