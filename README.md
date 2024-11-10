@@ -16,3 +16,37 @@ Modify is a unique web application that combines music streaming with real-time 
 * 👀 **User Activity** - See what other users are listening to in real-time.
 * 📊 **Analytics** - View aggregate data and insights.
 * 🚀 **More Features** - Discover additional features as you use the app!
+
+
+## Setup
+
+To get the project running on your local machine, follow these steps:
+
+### Prerequisites
+
+* [Node.js](https://nodejs.org/) installed
+* [MongoDB](https://www.mongodb.com/) database
+* [Cloudinary](https://cloudinary.com/) account for image storage
+* [Clerk](https://clerk.dev/) account for authentication
+
+### 1. Clone the Repository
+
+```bash
+https://github.com/AryanWadhe/Modify.git
+cd modify
+```
+
+### 2. Install Dependencies
+
+Navigate to both the `backend` and `frontend` directories and install dependencies:
+
+```bash
+# For backend
+cd backend
+npm install
+
+# For frontend
+cd ../frontend
+npm install
+
+```
