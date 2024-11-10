@@ -3,7 +3,8 @@ import { Message } from "../models/message.model.js";
 
 
 export const initializeSocket = (server) => {
-	const allowedOrigins = ["http://localhost:3000", "https://modify-lemon.vercel.app"];
+	const allowedOrigins = ["https://modify-lemon.vercel.app","http://localhost:3000"];
+	// const allowedOrigins = ["http://localhost:3000", "https://modify-lemon.vercel.app"];
 	const io = new Server(server, {
 		cors: {
 		  origin: (origin, callback) => {
