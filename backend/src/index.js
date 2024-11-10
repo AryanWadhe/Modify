@@ -29,8 +29,8 @@ initializeSocket(httpServer);
 
 app.use(
 	cors({
-		// origin: "http://localhost:3000",
-		origin: "https://modify-lemon.vercel.app/",
+		origin: "http://localhost:3000",
+		// origin: "https://modify-lemon.vercel.app/",
 		credentials: true,
 	})
 );
@@ -64,18 +64,12 @@ cron.schedule("0 * * * *", () => {
 	}
 });
 
-// app.use("/api/users", userRoutes);
-// app.use("/api/admin", adminRoutes);
-// app.use("/api/auth", authRoutes);
-// app.use("/api/songs", songRoutes);
-// app.use("/api/albums", albumRoutes);
-// app.use("/api/stats", statRoutes);
-app.use("/users",cors(), userRoutes);
-app.use("/admin",cors(), adminRoutes);
-app.use("/auth",cors(), authRoutes);
-app.use("/songs",cors(), songRoutes);
-app.use("/albums",cors(), albumRoutes);
-app.use("/stats",cors(), statRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/songs", songRoutes);
+app.use("/api/albums", albumRoutes);
+app.use("/api/stats", statRoutes);
 
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static(path.join(__dirname, "../frontend/dist")));
@@ -85,14 +79,14 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // error handler
-// app.use((err, req, res, next) => {
-// 	res.status(500).json({ message: process.env.NODE_ENV === "production" ? "Internal server error" : err.message });
-// });
-app.use(function (req, res, next) {
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-	next();
-  })
+app.use((err, req, res, next) => {
+	res.status(500).json({ message: process.env.NODE_ENV === "production" ? "Internal server error" : err.message });
+});
+// app.use(function (req, res, next) {
+// 	res.header("Access-Control-Allow-Origin", "*");
+// 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+// 	next();
+//   })
 
 httpServer.listen(PORT, () => {
 	console.log("Server is running on port " + PORT);
