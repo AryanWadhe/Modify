@@ -5,8 +5,6 @@ import PlayButton from "./PlayButton";
 import { useNavigate } from "react-router-dom";
 
 
-
-
 type SectionGridProps = {
 	title: string;
 	songs: Song[];

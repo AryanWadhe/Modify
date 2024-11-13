@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useMusicStore } from "@/stores/useMusicStore";
 import SectionGrid from "../home/components/SectionGrid";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
+ 
 const AllSongs = () => {
   const { fetchSongs, songs, isLoading } = useMusicStore();
 
