@@ -149,11 +149,11 @@ export const PlaybackControls = () => {
 						onClick={() => {
 							if (audioRef.current) {
 								if (audioRef.current.volume === 0) {
-									audioRef.current.volume = volume / 100; // Restore original volume
-									setVolume(prevVolume => prevVolume); // Retain the UI slider state
+									audioRef.current.volume = volume / 100; 
+									setVolume(prevVolume => prevVolume); 
 								} else {
-									audioRef.current.volume = 0; // Mute the audio
-									setVolume(0); // Update UI slider to reflect mute
+									audioRef.current.volume = 0; 
+									setVolume(0); 
 								}
 							}
 						}}
