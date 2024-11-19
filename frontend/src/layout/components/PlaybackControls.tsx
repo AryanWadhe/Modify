@@ -145,7 +145,19 @@ export const PlaybackControls = () => {
 					</Button>
 
 					<div className='flex items-center gap-2'>
-						<Button size='icon' variant='ghost' className='hover:text-white text-zinc-400'>
+						<Button size='icon' variant='ghost' className='hover:text-white text-zinc-400'
+						onClick={() => {
+							if (audioRef.current) {
+								if (audioRef.current.volume === 0) {
+									audioRef.current.volume = volume / 100; // Restore original volume
+									setVolume(prevVolume => prevVolume); // Retain the UI slider state
+								} else {
+									audioRef.current.volume = 0; // Mute the audio
+									setVolume(0); // Update UI slider to reflect mute
+								}
+							}
+						}}
+						>
 							<Volume1 className='h-4 w-4' />
 						</Button>
 
