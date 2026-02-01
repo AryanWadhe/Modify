@@ -69,3 +69,21 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+/* hide bottom toolbar completely */
+/* .cloudinary-3d-viewer .d8s-controls,
+.cloudinary-3d-viewer .d8s-ar,
+.cloudinary-3d-viewer button {
+  display: none !important;
+  color: yellow;
+  background-color: chartreuse;
+} */
+
+.sc-fsYfdN.kAZzzF {
+  color: chartreuse;
+  background-color: springgreen;
+}
+.sc-fsYfdN {
+  color: chartreuse;
+  background-color: springgreen;
+}
