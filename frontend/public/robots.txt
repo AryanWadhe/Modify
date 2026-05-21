@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://modify.online/sitemap.xml
