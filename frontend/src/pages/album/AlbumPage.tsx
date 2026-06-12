@@ -5,6 +5,8 @@ import { usePlayerStore } from "@/stores/usePlayerStore";
 import { Clock, Pause, Play } from "lucide-react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+
 
 export const formatDuration = (seconds: number) => {
 	const minutes = Math.floor(seconds / 60);
@@ -41,6 +43,45 @@ const AlbumPage = () => {
 	};
 
 	return (
+		<>
+		<Helmet>
+			<title>{currentAlbum?.title ?? "Album"} | Modify</title>
+
+			<meta
+				name="description"
+				content={`${currentAlbum?.title ?? "Album"} by ${
+					currentAlbum?.artist ?? "Unknown Artist"
+				}`}
+			/>
+
+			<link
+				rel="canonical"
+				href={`https://modify.online/albums/${currentAlbum?._id}`}
+			/>
+
+			<meta
+				property="og:title"
+				content={`${currentAlbum?.title ?? "Album"} | Modify`}
+			/>
+
+			<meta
+				property="og:description"
+				content={`${currentAlbum?.title ?? "Album"} by ${
+					currentAlbum?.artist ?? "Unknown Artist"
+				}`}
+			/>
+
+			<meta
+				property="og:image"
+				content={currentAlbum?.imageUrl ?? ""}
+			/>
+
+			<meta
+				property="og:url"
+				content={`https://modify.online/albums/${currentAlbum?._id}`}
+			/>
+		</Helmet>
+
 		<div className='h-full'>
 			<ScrollArea className='h-full rounded-md'>
 				{/* Main Content */}
@@ -147,6 +188,7 @@ const AlbumPage = () => {
 				</div>
 			</ScrollArea>
 		</div>
+		</>
 	);
 };
 export default AlbumPage;
