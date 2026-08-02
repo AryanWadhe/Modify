@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
-Disallow: /admin
+Allow: /
+Disallow: /admin/
 Sitemap: https://modify.online/sitemap.xml
